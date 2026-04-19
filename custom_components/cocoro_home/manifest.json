@@ -1,0 +1,11 @@
+{
+  "domain": "cocoro_home",
+  "name": "Sharp COCORO HOME (Washer)",
+  "version": "0.1.0",
+  "documentation": "https://github.com/yourself/cocoro_home_ha",
+  "codeowners": [],
+  "config_flow": true,
+  "iot_class": "cloud_polling",
+  "requirements": [],
+  "dependencies": []
+}

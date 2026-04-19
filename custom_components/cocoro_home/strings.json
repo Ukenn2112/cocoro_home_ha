@@ -1,0 +1,21 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Sharp COCORO HOME login",
+        "description": "Enter your Sharp COCORO MEMBERS credentials (me@example.com / password).",
+        "data": {
+          "email": "COCORO MEMBERS email",
+          "password": "Password"
+        }
+      }
+    },
+    "error": {
+      "auth": "Invalid credentials or SSO flow failed",
+      "unknown": "Unexpected error, see logs"
+    },
+    "abort": {
+      "already_configured": "This account is already configured"
+    }
+  }
+}

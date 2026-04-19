@@ -1,0 +1,49 @@
+send_course:
+  name: Send course to washer
+  description: >
+    Push a download course (by Sharp idCode + type) to the washer's "Download
+    Course" slot. User must then select it on the washer panel to actually run.
+  fields:
+    id_code:
+      name: Course idCode
+      description: 'e.g. "0x0003D4F1" — get from COCORO WASH web UI network tab'
+      required: true
+      example: "0x0003D4F1"
+      selector:
+        text:
+    course_type:
+      name: Course type flag
+      description: 'e.g. "0x10" for wash-to-dry, "0x00" wash-only'
+      required: true
+      example: "0x10"
+      selector:
+        text:
+
+refresh_catalog:
+  name: Refresh course catalog
+  description: >
+    Enumerate all downloadable courses from Sharp cloud and cache them so the
+    select entity can list them by name. Takes ~5-10 seconds. Run after
+    adding the integration and whenever Sharp publishes new courses.
+
+write_epc:
+  name: Write raw ECHONET property
+  description: >
+    Low-level escape hatch — writes any EPC to the first registered device.
+    Note: EPC 0x80 (operation status) is refused by the washer firmware at
+    the device layer per Japanese remote-operation safety regulations.
+  fields:
+    epc:
+      name: EPC
+      description: Hex e.g. "0xE5"
+      required: true
+      example: "0xE5"
+      selector:
+        text:
+    edt:
+      name: EDT
+      description: Hex e.g. "0x000F"
+      required: true
+      example: "0x000F"
+      selector:
+        text:

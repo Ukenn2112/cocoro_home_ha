@@ -1,0 +1,21 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Sharp COCORO HOME ログイン",
+        "description": "COCORO MEMBERS のメールアドレスとパスワードを入力してください。",
+        "data": {
+          "email": "COCORO MEMBERS メールアドレス",
+          "password": "パスワード"
+        }
+      }
+    },
+    "error": {
+      "auth": "認証に失敗しました",
+      "unknown": "予期しないエラーです。ログを確認してください"
+    },
+    "abort": {
+      "already_configured": "このアカウントはすでに設定済みです"
+    }
+  }
+}
