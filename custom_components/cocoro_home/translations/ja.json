@@ -2,7 +2,7 @@
   "config": {
     "step": {
       "user": {
-        "title": "Sharp COCORO HOME ログイン",
+        "title": "シャープ COCORO HOME ログイン",
         "description": "COCORO MEMBERS のメールアドレスとパスワードを入力してください。",
         "data": {
           "email": "COCORO MEMBERS メールアドレス",
@@ -11,11 +11,38 @@
       }
     },
     "error": {
-      "auth": "認証に失敗しました",
-      "unknown": "予期しないエラーです。ログを確認してください"
+      "auth": "認証に失敗しました（メールアドレス／パスワードが正しくありません）",
+      "unknown": "予期しないエラーが発生しました。ログを確認してください"
     },
     "abort": {
       "already_configured": "このアカウントはすでに設定済みです"
+    }
+  },
+  "entity": {
+    "sensor": {
+      "operation_status": {"name": "電源状態"},
+      "door_lock": {"name": "ドアロック"},
+      "washer_state": {"name": "運転状態"},
+      "fault_status": {"name": "故障状態"},
+      "remaining_minutes": {"name": "残り時間"},
+      "course_number": {"name": "コース番号"},
+      "detergent": {"name": "洗剤設定"},
+      "softener": {"name": "柔軟剤設定"},
+      "mfg_fault": {"name": "メーカー故障コード"},
+      "washing_status": {"name": "洗濯ステータス"},
+      "last_updated": {"name": "最終更新"}
+    },
+    "binary_sensor": {
+      "running":     {"name": "運転中"},
+      "has_fault":   {"name": "故障"},
+      "door_locked": {"name": "ドアロック"},
+      "power":       {"name": "電源"}
+    },
+    "select": {
+      "download_course": {"name": "ダウンロードコース"}
+    },
+    "button": {
+      "refresh_catalog": {"name": "コース一覧を更新"}
     }
   }
 }

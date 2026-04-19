@@ -31,16 +31,16 @@ class BDesc:
 
 
 DESCS: list[BDesc] = [
-    BDesc("running", "Running",
+    BDesc("running", "運転中",
           lambda by: (_hex_int(by.get(0xB2)) or 0x43) != 0x43,
           BinarySensorDeviceClass.RUNNING),
-    BDesc("has_fault", "Has fault",
+    BDesc("has_fault", "故障",
           lambda by: (_hex_int(by.get(0x88)) or 0x42) != 0x42,
           BinarySensorDeviceClass.PROBLEM),
-    BDesc("door_locked", "Door locked",
+    BDesc("door_locked", "ドアロック",
           lambda by: (_hex_int(by.get(0xB0)) or 0x42) == 0x41,
           BinarySensorDeviceClass.LOCK),
-    BDesc("power", "Powered on",
+    BDesc("power", "電源",
           lambda by: (_hex_int(by.get(0x80)) or 0x31) == 0x30,
           BinarySensorDeviceClass.POWER),
 ]

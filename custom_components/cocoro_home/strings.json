@@ -2,20 +2,20 @@
   "config": {
     "step": {
       "user": {
-        "title": "Sharp COCORO HOME login",
-        "description": "Enter your Sharp COCORO MEMBERS credentials (me@example.com / password).",
+        "title": "シャープ COCORO HOME ログイン",
+        "description": "COCORO MEMBERS のメールアドレスとパスワードを入力してください。",
         "data": {
-          "email": "COCORO MEMBERS email",
-          "password": "Password"
+          "email": "COCORO MEMBERS メールアドレス",
+          "password": "パスワード"
         }
       }
     },
     "error": {
-      "auth": "Invalid credentials or SSO flow failed",
-      "unknown": "Unexpected error, see logs"
+      "auth": "認証に失敗しました",
+      "unknown": "予期しないエラー。ログを確認してください"
     },
     "abort": {
-      "already_configured": "This account is already configured"
+      "already_configured": "このアカウントは既に設定済みです"
     }
   }
 }

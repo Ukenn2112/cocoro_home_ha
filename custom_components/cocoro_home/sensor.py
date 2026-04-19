@@ -54,16 +54,16 @@ def _decode_uint16(code: str | None) -> int | None:
 
 
 DESCS: list[Desc] = [
-    Desc("operation_status", 0x80, "Operation status", _decode_map(OP_STATUS)),
-    Desc("door_lock", 0xB0, "Door lock", _decode_map(DOOR_LOCK)),
-    Desc("washer_state", 0xB2, "Washer state", _decode_map(WASHER_STATE)),
-    Desc("fault_status", 0x88, "Fault status", _decode_map(FAULT_STATUS)),
-    Desc("remaining_minutes", 0xE9, "Remaining", _decode_uint16, "min", SensorStateClass.MEASUREMENT),
-    Desc("course_number", 0xE7, "Course", _decode_raw),
-    Desc("detergent", 0xE5, "Detergent setting", _decode_raw),
-    Desc("softener", 0xE6, "Softener setting", _decode_raw),
-    Desc("mfg_fault", 0x8B, "Manufacturer fault code", _decode_raw),
-    Desc("washing_status", 0xD0, "Washing status", _decode_raw),
+    Desc("operation_status", 0x80, "電源状態", _decode_map(OP_STATUS)),
+    Desc("door_lock", 0xB0, "ドアロック", _decode_map(DOOR_LOCK)),
+    Desc("washer_state", 0xB2, "運転状態", _decode_map(WASHER_STATE)),
+    Desc("fault_status", 0x88, "故障状態", _decode_map(FAULT_STATUS)),
+    Desc("remaining_minutes", 0xE9, "残り時間", _decode_uint16, "min", SensorStateClass.MEASUREMENT),
+    Desc("course_number", 0xE7, "コース番号", _decode_raw),
+    Desc("detergent", 0xE5, "洗剤設定", _decode_raw),
+    Desc("softener", 0xE6, "柔軟剤設定", _decode_raw),
+    Desc("mfg_fault", 0x8B, "メーカー故障コード", _decode_raw),
+    Desc("washing_status", 0xD0, "洗濯ステータス", _decode_raw),
 ]
 
 
@@ -118,7 +118,7 @@ class CocoroSensor(CoordinatorEntity, SensorEntity):
 
 class CocoroLastUpdated(CoordinatorEntity, SensorEntity):
     _attr_has_entity_name = True
-    _attr_name = "Last updated"
+    _attr_name = "最終更新"
 
     def __init__(self, coord: CocoroHomeCoordinator, device: dict) -> None:
         super().__init__(coord)

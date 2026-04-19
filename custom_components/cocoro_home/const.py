@@ -28,11 +28,11 @@ APP_NAME       = "cocorohome_ha:0.1.0"
 CONF_EMAIL     = "email"
 CONF_PASSWORD  = "password"
 
-# ECHONET Lite 0x03D3 (washer-dryer) property decoding
-OP_STATUS = {0x30: "on", 0x31: "off"}
-DOOR_LOCK = {0x41: "locked", 0x42: "unlocked"}
+# ECHONET Lite 0x03D3 (洗濯乾燥機) プロパティ日本語表示
+OP_STATUS = {0x30: "オン", 0x31: "オフ"}
+DOOR_LOCK = {0x41: "ロック中", 0x42: "解錠"}
 WASHER_STATE = {
-    0x41: "washing", 0x42: "rinsing", 0x43: "stopped",
-    0x44: "drying",  0x45: "spinning",
+    0x41: "洗い",   0x42: "すすぎ", 0x43: "停止",
+    0x44: "乾燥",   0x45: "脱水",
 }
-FAULT_STATUS = {0x41: "fault", 0x42: "no_fault"}
+FAULT_STATUS = {0x41: "異常あり", 0x42: "正常"}

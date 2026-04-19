@@ -21,7 +21,7 @@ from .coordinator import CocoroHomeCoordinator
 
 _LOGGER = logging.getLogger(__name__)
 
-PLACEHOLDER = "— refresh catalog first —"
+PLACEHOLDER = "— コース一覧を更新してください —"
 
 
 async def async_setup_entry(
@@ -39,7 +39,7 @@ async def async_setup_entry(
 
 class DownloadCourseSelect(CoordinatorEntity, SelectEntity):
     _attr_has_entity_name = True
-    _attr_name = "Download course"
+    _attr_name = "ダウンロードコース"
     _attr_icon = "mdi:playlist-check"
 
     def __init__(self, coord: CocoroHomeCoordinator, api: Any, device: dict) -> None:

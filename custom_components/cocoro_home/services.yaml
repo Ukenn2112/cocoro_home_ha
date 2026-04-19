@@ -1,48 +1,49 @@
 send_course:
-  name: Send course to washer
+  name: コースを送信
   description: >
-    Push a download course (by Sharp idCode + type) to the washer's "Download
-    Course" slot. User must then select it on the washer panel to actually run.
+    ダウンロードコース（idCode + type 指定）を洗濯機の「ダウンロードコース」枠に送信します。
+    運転を開始するには、洗濯機本体で「ダウンロードコース」を選択してからスタートして
+    ください（日本の遠隔操作ガイドラインにより、リモートスタートは不可）。
   fields:
     id_code:
-      name: Course idCode
-      description: 'e.g. "0x0003D4F1" — get from COCORO WASH web UI network tab'
+      name: コース idCode
+      description: '例: "0x0003D4F1"  COCORO WASH ウェブ UI のネットワークタブで取得'
       required: true
       example: "0x0003D4F1"
       selector:
         text:
     course_type:
-      name: Course type flag
-      description: 'e.g. "0x10" for wash-to-dry, "0x00" wash-only'
+      name: コースタイプ
+      description: '例: "0x10" (洗〜乾)  "0x00" (洗濯のみ)'
       required: true
       example: "0x10"
       selector:
         text:
 
 refresh_catalog:
-  name: Refresh course catalog
+  name: コース一覧を更新
   description: >
-    Enumerate all downloadable courses from Sharp cloud and cache them so the
-    select entity can list them by name. Takes ~5-10 seconds. Run after
-    adding the integration and whenever Sharp publishes new courses.
+    シャープクラウドから利用可能なダウンロードコースをすべて取得して、
+    select エンティティの選択肢を更新します（所要時間 5〜10 秒）。
+    統合追加後と、新しいコースが追加されたときに実行してください。
 
 write_epc:
-  name: Write raw ECHONET property
+  name: ECHONET プロパティを直接書き込み
   description: >
-    Low-level escape hatch — writes any EPC to the first registered device.
-    Note: EPC 0x80 (operation status) is refused by the washer firmware at
-    the device layer per Japanese remote-operation safety regulations.
+    低レベル操作。任意の EPC を最初に登録された機器に書き込みます。
+    EPC 0x80（電源状態）は日本の家電安全法により機器ファームウェア側で
+    拒否されます（リモートでの ON/OFF は不可）。
   fields:
     epc:
       name: EPC
-      description: Hex e.g. "0xE5"
+      description: 16 進数（例 "0xE5"）
       required: true
       example: "0xE5"
       selector:
         text:
     edt:
       name: EDT
-      description: Hex e.g. "0x000F"
+      description: 16 進数（例 "0x000F"）
       required: true
       example: "0x000F"
       selector:

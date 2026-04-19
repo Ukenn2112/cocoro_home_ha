@@ -35,7 +35,7 @@ async def async_setup_entry(
 
 class RefreshCatalogButton(CoordinatorEntity, ButtonEntity):
     _attr_has_entity_name = True
-    _attr_name = "Refresh course catalog"
+    _attr_name = "コース一覧を更新"
     _attr_icon = "mdi:refresh-circle"
 
     def __init__(self, coord: CocoroHomeCoordinator, api: Any, device: dict) -> None:
